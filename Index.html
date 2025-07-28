@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privada Residencial - Inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('fondo_privada.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      backdrop-filter: blur(1px);
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="text-center text-black mb-4">
+      <h1 class="display-4 fw-bold">Bienvenido a la Privada Residencial</h1>
+      <p class="lead fw-bold">Inicie sesión o regístrese para acceder a su cuenta</p>
+      
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h3 class="mb-4 text-center">Inicio de Sesión</h3>
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="usuario" class="form-label">Usuario</label>
+              <input type="text" class="form-control" id="usuario" name="usuario" required>
+            </div>
+            <div class="mb-3">
+              <label for="clave" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="clave" name="clave" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+          </form>
+          <hr>
+          <div class="d-grid gap-2">
+            <a href="registro.html" class="btn btn-outline-success">Registrarse</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const usuario = document.getElementById('usuario').value;
+      const clave = document.getElementById('clave').value;
+
+      fetch('validar_login.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `usuario=${encodeURIComponent(usuario)}&clave=${encodeURIComponent(clave)}`
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert('Bienvenido ' + data.nombre);
+          window.location.href = 'dashboard.html';
+        } else {
+          alert('Usuario o contraseña incorrectos.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -126,3 +126,4 @@ document.getElementById('start-stop-btn').addEventListener('click', () => {
   gameInfoElement.classList.remove('hidden');
   startGame();
 })
+

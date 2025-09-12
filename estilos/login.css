@@ -52,13 +52,10 @@ label[for=Usuario]:focus-within {
 label[for=Contraseña]:focus-within {
   color: blue;
 }
-
-
     
-#btn.btn {
+#btn{
     background-color: coral;
     border: none;
-    color: white;
     padding: 1rem 2rem;
     font-size: 1rem;
     margin: 1rem 1px;
@@ -72,30 +69,4 @@ label[for=Contraseña]:focus-within {
 .btn:active{
     background-color: var(--primary-active);
 }
-
-#butn.btn{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: green;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  margin: 1rem 1px;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-
-#butn.btn:hover{
-    background-color:rgb(2, 192, 2);
-}
-
-#butn.btn:active{
-    background-color: rgb(2, 96, 1);
-}
-
-.mi-imagen {
-      width: 60px; /* Define el ancho de la imagen */
-      height: 60px; /* Define la altura de la imagen */
-    }
     

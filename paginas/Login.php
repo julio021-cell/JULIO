@@ -22,8 +22,7 @@
                   <label for="Usuario">Usuario</br><input type="text"></label></br>
                    <label for="Contraseña">Contraseña</br><input type="text"></label></br>
              </form>
-             <button id="btn" type="submit" class="btn" >Iniciar Sesión</button></br>
-             
+             <button class="btn" id="btn">Iniciar Sesión</button>
           </div>
 
             
